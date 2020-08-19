@@ -1,0 +1,74 @@
+.header {
+    background-color: #131921;
+    display: flex;
+    align-items: center;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    
+    &__logo {
+        width: 100px;
+        object-fit: contain;
+        margin: 18px;
+        margin-bottom: 3px;
+    }
+
+    &__search {
+        display: flex;
+        flex: 1;
+
+        &Icon {
+            background-color: #cd9042;
+            height: 22px !important;
+            padding: 5px;
+        }
+
+        &Input {
+            height: 12px;
+            padding: 10px;
+            border: none;
+            width: 100%;
+
+            &:hover, &:focus, &:active {
+                outline: none;
+            }
+        }
+    }
+
+    &__nav {
+        display: flex;
+    }
+
+    &__link {
+        margin: 0 10px;        
+        text-decoration: none;
+    }
+
+    &__option {
+        display: flex;
+        flex-direction: column;
+        font-family: "Amazon Ember";
+
+        &--first {
+            font-size: 12px;
+            color: #ccc;
+        }
+
+        &--second {
+            font-size: 14px;
+            color: white;
+            font-weight: 700;
+        }
+    }
+
+    &__optionBasket {
+        color: white;
+        display: flex;
+        align-items: center;
+
+        &--count {
+            margin: 0 8px;
+        }
+    }
+    
+}

@@ -1,43 +1,27 @@
-import React, { useState, useEffect } from 'react';
-import fetchWeather from './utilities/fetch';
+import React from 'react';
+import { Switch, Route } from "react-router-dom";
+import Header from "./Component/Header/Header";
 
-import { Button, Container, FormControl } from 'react-bootstrap';
+
+import "./App.css";
 
 function App() {
-  const [ weather, setWeather ]= useState({});
-
-  useEffect(() => {
-    const res = fetchWeather;
-    res.then(res => setWeather(res));
-  }, []);
-
-  const onSubmit = e => {
-    console.log('clicked');
-  };
 
   return (
-    <Container>
-      <div className="App">
-        {
-          !!weather.data &&
-            <p>Weather is {weather.data[0].temp} degrees </p>
-        }
-
-        <FormControl
-          className="mb-3"
-          placeholder="Country"
-          aria-label="Country"
-        />
-
-        <FormControl
-          className="mb-3"
-          placeholder="City"
-          aria-label="City"
-        />
-
-        <Button variant="primary" type="submit" onClick={onSubmit}>Submit</Button>
-      </div>
-    </Container>
+    <div className="app">
+      <Header />
+      <Switch>
+        <Route path="/checkout">
+          <h1>Checkout Page</h1>
+        </Route>
+        <Route path="/login">
+          <h1>Login Page</h1>
+        </Route>
+        <Route path="/">
+          <h1>Home page</h1>
+        </Route>
+      </Switch>
+    </div>
   );
 }
 
